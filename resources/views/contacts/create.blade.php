@@ -1,0 +1,57 @@
+@extends('layouts.dashboard.app_master')
+@section('page_title')
+    Create Contacts
+@endsection
+@section('content')
+
+    <section class="container">
+        <div class="card ">
+
+            <div class="card-header">
+                <h1 class="text-center">Create Contacts</h1>
+            </div><!-- card-header -->
+ 
+            <div class="card-body">
+
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+
+             <!-- form start -->
+            <form action="{{ route('contacts.store') }}" method="post">
+                @csrf
+
+
+                  <div class=" mb-3">
+                    <label>Title Message</label>
+                    <input type="text" name="title_message" class="form-control form-control-lg"  placeholder="Title Message">
+                  </div><!-- contacts title_message -->
+
+                  <div class=" mb-3">
+                    <label>Message</label>
+                    <input type="text" name="message" class="form-control form-control-lg"  placeholder="Message">
+                  </div><!-- contacts message -->
+
+
+
+                <div class="mx-auto text-center">
+                    <button type="submit" class="btn btn-lg btn-dark text-white">Create Contacts</button>
+                </div><!-- btn -->
+
+              </form><!-- end form -->
+
+            </div><!-- card-body -->
+
+            <div class="card-footer">
+            </div><!-- card-footer  -->
+
+        </div><!-- card -->
+    </section><!-- container -->
+@endsection
