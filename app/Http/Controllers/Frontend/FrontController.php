@@ -20,6 +20,16 @@ class FrontController extends Controller
     // }
 
 
+    public function index(Request $request)
+    {
+        // dd($request->user());
+        // $client = Client::first();
+        // auth('client-web')->login($client);
+
+        return view('index');
+    } // index
+
+
     public function home(Request $request)
     {
         // dd($request->user());
