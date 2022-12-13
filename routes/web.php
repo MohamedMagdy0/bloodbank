@@ -23,7 +23,7 @@ use App\Http\Controllers\DonationRequestController;
 
 
 Route::get('/', [FrontController::class, 'home'])->name('home');
-Route::get('/', [FrontController::class, 'home'])->name('home');
+Route::get('/', [FrontController::class, 'index'])->name('index');
 
 Route::group( [ 'namespace' => 'Frontend', [ 'middleware' => 'auth:client-web' ] ] ,function () {
 
