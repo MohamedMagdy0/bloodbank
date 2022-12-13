@@ -22,12 +22,12 @@ use App\Http\Controllers\DonationRequestController;
 
 
 
+Route::get('/', [FrontController::class, 'home'])->name('home');
 
 Route::group( [ 'namespace' => 'Frontend', [ 'middleware' => 'auth:client-web' ] ] ,function () {
 
 // Route::group( [ 'middleware' => 'auth:client-web', ['Except' => ['logout']] ,function () {
 
-    Route::get('/', [FrontController::class, 'home'])->name('home');
 
     Route::post('toggle-favourite', [FrontController::class, 'toggleFavourite'])->name('toggle-favourite');
     Route::get('about', [FrontController::class, 'about'])->name('about');
